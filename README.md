@@ -18,6 +18,7 @@ To serve your site locally:
 ```bash
 docker run --rm -it -p 4000:4000 -v $PWD:/src jguyomard/jekyll-builder jekyll serve
 ```
+Then open [`http://localhost:4000/`](http://localhost:4000/) in your browser.
 
 ## Supported tags
 
