@@ -3,6 +3,7 @@ MAINTAINER JG
 
 # Install some jekyll plugins
 RUN gem install jekyll-archives
+RUN gem install jekyll-paginate-categories
 RUN gem install rouge 
 
 RUN docker-helper cleanup
