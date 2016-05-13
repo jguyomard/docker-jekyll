@@ -2,9 +2,11 @@ FROM jekyll/jekyll:builder
 MAINTAINER JG
 
 # Install some jekyll plugins
-RUN gem install jekyll-archives
-RUN gem install jekyll-paginate-categories
-RUN gem install rouge 
+RUN apk add --no-cache python \
+    && gem install jekyll-archives \
+    && gem install jekyll-paginate-categories \
+    && gem install rouge \
+    && gem install pygments.rb
 
 RUN docker-helper cleanup
 

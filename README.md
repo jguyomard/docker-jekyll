@@ -40,12 +40,9 @@ This Docker image comes with:
 - jekyll-feed
 - jekyll-archives
 - jekyll-paginate-categories
-- rdiscount
-- redcarpet
 - kramdown
 - jemoji
 - RedCloth
-- maruku
 - pygments.rb
 - rouge
 
