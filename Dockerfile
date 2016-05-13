@@ -2,13 +2,20 @@ FROM jekyll/jekyll:builder
 MAINTAINER JG
 
 # Install some jekyll plugins
-RUN apk add --no-cache python \
-    && gem install jekyll-archives \
-    && gem install jekyll-paginate-categories \
-    && gem install rouge \
-    && gem install pygments.rb
+RUN apk add --no-cache --virtual .build-deps \
+        build-base \
+        ruby-dev \
+    && apk add --no-cache \
+        python \
+    && gem install \
+        jekyll-archives \
+        jekyll-paginate-categories \
+        rouge \
+        pygments.rb
 
-RUN docker-helper cleanup
+# Clean
+RUN apk del -f .build-deps \
+    && docker-helper cleanup
 
 VOLUME /src
 EXPOSE 4000
