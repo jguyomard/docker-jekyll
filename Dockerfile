@@ -11,10 +11,10 @@ RUN apk add --no-cache --virtual .build-deps \
         jekyll-archives \
         jekyll-paginate-categories \
         rouge \
-        pygments.rb
+        pygments.rb \
 
 # Clean
-RUN apk del -f .build-deps \
+    && apk del -f .build-deps \
     && docker-helper cleanup
 
 VOLUME /src
